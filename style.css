@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Nunito:wght@600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} /* o símbolo * seleciona todas as tags */
+
+a{
+    text-decoration: none;
+    color: inherit; /* inherit herda todas as cores */
+}
+
+/* ++++++++++++++ Classes reutilizáveis (wrapper/embrulho + flex) ++++++++ */
+.wrapper{
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto; /*margin auto - centraliza e, margem da direita e esquerda ficam iguais */
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 20px;
+    color: #ea0f78;
+    background-color: #fff;
+    padding: 10px 22px;
+    border-radius: 5px;
+    display: block;
+    width: fit-content; /* o conteudo se adapta a largura dentro do botão */
+}
+
+.btn:hover{          /* se usa : para chamar a pseudoclasse */
+    opacity: 0.8;
+}
+
+
+/* -------------------------- Seção inicial ------------------------------ */
+#secao-inicial{
+    padding: 32px 0; /* margem entre a imagem e as bordas */
+    color: #fff;
+    background: linear-gradient(90deg, #d83482 0%, #ec0a76 100%); /* degradee da esquerda para a direita ou seja do 0 para o 100% */
+}
+
+#logo{
+    font-family: 'Nunito', sans-serif; 
+    font-weight: 700;
+    font-size: 16px;
+}
+
+#links-secoes{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+}
+
+#links-secoes > a{ /* dessa forma e selecionado os items individualmente */ 
+    padding: 10px 15px;
+    
+}
+
+#links-secoes > a:hover{
+    text-decoration: underline; /* sublinhar o texto */
+}
+
+.btn_menu{
+    font-size: 16px;
+}
+
+/* ++++++++++++++++++++++++++++++ Banner +++++++++++++++++++++++++++++++ */
+#conteudo-inicial{
+    margin-top: 64px;
+}
+
+#conteudo-esq{
+    width: 40%;
+}
+
+#conteudo-esq > h1{
+    font-family: 'Nunito', sans-serif; 
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 58px;
+}
+
+#conteudo-esq > p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+    margin: 10px 0 32px;
+}
+
+#imagem-1{
+    max-width: 569px;
+    width: 45%;         /* tamanho para a imagem */
+    min-width: 450px;
+
+}
+
+/* +++++++++++++++++++++++++ Seção artigos +++++++++++++++++++++++++++++ */
+/* Geral da seção */
+#secao-artigos{
+    background-color: #f3f5f7;
+    padding: 64px 0;
+}
+
+#secao-artigos > h2{
+    text-align: center;
+    font-family: 'Nunito', sans-serif; 
+    font-weight: 800;
+    font-size: 30px;
+    color: #313131;
+    margin-bottom:  32px;    
+}
+
+/* ++++++++++++++++++++++ Artigos principais ++++++++++++++++++++++++++ */
+#artigos-principais{
+    width: 65%;
+}
+
+#artigos-principais > h3, #artigos-destaque > h3{  /* para selecionar dois seletores ao mesmo tempo basta colocar . ou , e escrever o nome da classe ou id */
+    font-family: 'Nunito', sans-serif; 
+    font-weight: 700;
+    font-size: 25px;
+    color: #313131;
+}
+
+#artigos-principais > p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 18px;
+    color: #b6b6b6;
+    line-height: 26px;
+    margin: 10px 0 32px;
+}
+
+#cards{
+    flex-wrap: wrap; /*wrap para quebrar a linha*/
+}
+
+.card{
+    background-color: #fff;
+    width: 48%;
+    min-width: 310px; /* min-width serve para dizer a largura minima, depois disso o conteudo ira começar se ajusar*/
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 32px;
+}
+
+.cabecalho_card{
+    margin-bottom: 20px;
+}
+
+.cabecalho_card > p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+    color: #b6b6b6;
+}
+
+.cabecalho_card > i{
+    font-size: 25px;
+    color: #ea2181;
+}
+
+.conteudo_card > h4, .card_destaque > h4{
+    font-family: 'Nunito', sans-serif; 
+    font-weight: 700;
+    font-size: 20px;
+    color: #ea2181;
+    margin-bottom: 5px;
+}
+
+.conteudo_card > p, #textos-final > p{
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 18px;
+    color: #b6b6b6;
+    line-height: 26px;
+}
+
+/* +++++++++++++++++++++++++ Artigos em destaques ++++++++++++++++++++++++++ */
+#artigos-destaque{
+    width: 33%;
+}
+#cards-destaque{
+    margin-top: 20px;
+}
+.card_destaque{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 32px;
+}
+#secao-artigos > div{
+    align-items: flex-start;
+}
+
+/* hover do coração para ficar preenchido */ 
+/* ::before cria um pseudo-elemento que é o primeiro filho do elemento atingido. É frequentemente utilizado para adicionar conteúdo decorativo à um element utilizando a propriedade content. Este elemento é inline por padrão. */
+.cabecalho_card > i:hover::before{
+    font-family: "Font Awesome 6 Free";
+    content: "\f004"; /*simbolo font awesome*/
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ++++++++++++++++++++++ Seçao final e rodape +++++++++++++++++++++++ */
+/* Seção final */
+#secao-final{
+    background-color: #ECEEF0;
+    padding: 64px 0;
+}
+#textos-final{
+    width: 40%;
+}
+#textos-final > h2{
+    font-family: 'Nunito', sans-serif; 
+    font-weight: 800;
+    font-size: 30px;
+    color: #313131;
+    margin-bottom: 20px;
+}
+
+#imagem-2{
+    max-width: 552px;
+    width: 40%;         /* */
+    min-width: 400px;
+}
+
+
+.btn_secundario{
+    background-color: #d83482;
+    color: #fff;
+    margin: 32px auto 0;
+}
+/* +++++++++++++++++++++++ Rodape ++++++++++++++++++++++++++++ */
+footer{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #ea2181;
+    background-color: #fff;
+}
+
+/* ++++++++++++++++++++++ Resposividade +++++++++++++++++++++++ */
+/* Media Queries - serve para responsividade, regra para definir a largura do dispositivo e ira entrar nessa regra */
+
+/* 1° Breakpoint - width:1100px (h1, botão, cartões, e na div textos da seção final */
+@media screen and (max-width: 1100px){    /* max será de max para minimo e min sera de minimo para maximo */
+  #conteudo-esq > h1{
+      font-size: 48px;
+    }
+    .btn{
+        font-size: 18px;
+    }
+    .card{
+        width: 100%;
+    }
+    #texto-final{
+        width: 50%;
+    }
+}   
+
+/* 2° Breakpoint -  width: 930px */
+@media screen and (max-width: 930px) {
+    #conteudo-esq > h1{
+        font-size: 40px;
+    }
+    .btn, .btn_menu, #artigos-principais > p, .conteudo_card > p, #textos-final > p{
+        font-size: 16px;
+    }
+    #secao-artigos > h2, #textos-final > h2{
+        font-size: 25px;
+    }
+    #artigos-principais > h3, #artigos-destaque > h3{
+        font-size: 20px;
+    }
+    .conteudo_card > h4, .card_destaque > h4{
+        font-size: 18px;
+    }
+}
+
+/* 3° Breakpoint -  width: 830px */
+@media screen and (max-width: 830px) {
+/* banner */
+    #imagem-1{
+    display: none; /* esconde a imagem */
+    }
+    #conteudo-esq{
+        width: 70%;
+        text-align: center;
+    }
+    #conteudo-inicial > div{
+        justify-content: center;
+    }
+    #conteudo-esq > .btn{
+        margin: auto;
+    }
+    #conteudo-esq > h1{
+        font-size: 56px;
+    }
+
+
+/* Artigos */
+    #secao-artigos > div{
+        flex-direction: column-reverse;
+    }
+    #artigos-destaque{
+        width: 100%;    
+        margin-bottom: 32px;
+    }
+    #cards-destaque{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .card_destaque{
+        width: 48%;
+        min-width: 260px;
+    }
+    #artigos-principais{
+        width: 100%;
+    }
+    .card{
+        min-width: 100%;
+    }
+
+    /* Seção final */
+    #conteudo-final{
+    flex-direction: column;
+    }
+    #testos-final{
+    text-align: center;
+    width: 80%;
+    margin-bottom: 32px;
+    }
+    #imagem-2{
+    width: 60%;
+    min-width: 200px;
+    }
+}
+
+/* 4° Breakpoint  - width: 600px */
+@media screen and (max-width: 600px){
+    #links-secoes{
+        display: none; /* esconde as coisas */
+    }
+    #conteudo-esq > p{
+        display: none;
+    }
+    #conteudo-esq > h1{
+        font-size: 38px;
+        margin-bottom: 32px;
+    }
+    #conteud-esq{
+        width: 100%;
+    }
+    .card_destaque{
+        width: 100%;
+    }
+}
